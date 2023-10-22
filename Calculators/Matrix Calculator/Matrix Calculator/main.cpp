@@ -4,8 +4,11 @@
 
 int main() {
     Matrix TestMatrix;
+ 
 
-    TestMatrix = TestMatrix.LoadFromFile("Matrix.txt");
+    TestMatrix.LoadFromFile("Matrix.txt", MatrixB);
+
+   
 
     TestMatrix.PrintMatrix();
 

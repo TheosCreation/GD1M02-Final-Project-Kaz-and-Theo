@@ -29,28 +29,49 @@ void Matrix::PrintMatrix()
 	}
 }
 
-void Matrix::ReplaceMatrixPos(int _RowNum, int _ColNum, int _Replacement)
+void Matrix::ReplaceMatrixVal( int _ColNum, int _RowNum, int _Replacement)
 {
-
+	m_MatrixArray[_ColNum][_RowNum] = _Replacement;
 }
 
-Matrix Matrix::LoadFromFile(const char* filename)
+
+
+void Matrix::LoadFromFile(const char* _Filename, LoadedValues _ValueType)
 {
 	Matrix NewMatrix;
-	std::ifstream file(filename);
+	std::ifstream file(_Filename);
 	if (!file.is_open()) {
 		std::cerr << "Error: Unable to open the file." << std::endl;
-		return NewMatrix;
+		return;
+	}
+
+	std::string temp;
+	switch (_ValueType) {
+	case MatrixA:
+		//do nothing :D
+		break;
+	case MatrixB:
+		for (int i = 0; i < 16; i++)
+		{
+			file >> temp;
+			//literally just skips lines LMAO
+			// theres probably a better way to do this but we have like a week to do this so
+
+		}
+		break;
+	default: 
+		std::cout << "Please Input their MatrixA or MatrixB";
+		break;
 	}
 
 	for (int i = 0; i < 4; ++i) {
 		for (int j = 0; j < 4; ++j) {
 			if (!(file >> NewMatrix.m_MatrixArray[i][j])) {
 				std::cerr << "Error: Invalid data in the file." << std::endl;
-				return NewMatrix;
+				return;
 			}
 		}
 	}
-	
-	return NewMatrix;
+	*this = NewMatrix;
+	file.close();
 }

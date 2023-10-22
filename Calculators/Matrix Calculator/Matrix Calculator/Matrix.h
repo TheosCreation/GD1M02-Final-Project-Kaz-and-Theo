@@ -2,6 +2,13 @@
 #include <iostream>
 #include <fstream>
 
+
+
+enum LoadedValues {
+	MatrixA,
+	MatrixB,
+};
+
 class Matrix
 {
 public:
@@ -11,7 +18,7 @@ public:
 	~Matrix();
 
 	void PrintMatrix();
-	void ReplaceMatrixPos(int _RowNum, int _ColNum, int _Replacement);
-	Matrix LoadFromFile(const char* filename);
+	void ReplaceMatrixVal(int _RowNum, int _ColNum, int _Replacement);
+	void LoadFromFile(const char* _Filename, LoadedValues _ValueType);
 };
 
