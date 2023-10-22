@@ -3,10 +3,13 @@
 #include <fstream>
 
 
-void ReadFile();
+
+
 
 int main() {
+    Matrix TestMatrix;
 
+    TestMatrix.PrintMatrix();
 
     return 0;
 }
