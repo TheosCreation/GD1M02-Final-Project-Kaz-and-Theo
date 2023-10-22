@@ -33,3 +33,24 @@ void Matrix::ReplaceMatrixPos(int _RowNum, int _ColNum, int _Replacement)
 {
 
 }
+
+Matrix Matrix::LoadFromFile(const char* filename)
+{
+	Matrix NewMatrix;
+	std::ifstream file(filename);
+	if (!file.is_open()) {
+		std::cerr << "Error: Unable to open the file." << std::endl;
+		return NewMatrix;
+	}
+
+	for (int i = 0; i < 4; ++i) {
+		for (int j = 0; j < 4; ++j) {
+			if (!(file >> NewMatrix.m_MatrixArray[i][j])) {
+				std::cerr << "Error: Invalid data in the file." << std::endl;
+				return NewMatrix;
+			}
+		}
+	}
+	
+	return NewMatrix;
+}

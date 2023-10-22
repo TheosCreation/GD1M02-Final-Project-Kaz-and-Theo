@@ -1,5 +1,7 @@
 #pragma once
 #include <iostream>
+#include <fstream>
+
 class Matrix
 {
 public:
@@ -10,5 +12,6 @@ public:
 
 	void PrintMatrix();
 	void ReplaceMatrixPos(int _RowNum, int _ColNum, int _Replacement);
+	Matrix LoadFromFile(const char* filename);
 };
 

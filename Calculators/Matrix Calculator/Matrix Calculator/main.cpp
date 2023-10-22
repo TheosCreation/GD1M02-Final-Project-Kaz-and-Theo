@@ -1,13 +1,11 @@
 #include <iostream>
 #include "Matrix.h"
-#include <fstream>
-
-
-
 
 
 int main() {
     Matrix TestMatrix;
+
+    TestMatrix = TestMatrix.LoadFromFile("Matrix.txt");
 
     TestMatrix.PrintMatrix();
 
