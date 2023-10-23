@@ -1,2 +1,3 @@
-﻿  Matrix.cpp
-  Matrix Calculator.vcxproj -> C:\Users\yummy hair\GD1M02-Final-Project-Kaz-and-Theo\Calculators\Matrix Calculator\x64\Debug\Matrix Calculator.exe
+﻿  main.cpp
+C:\Users\theoj\GD1M02-Final-Project-Kaz-and-Theo\Calculators\Matrix Calculator\Matrix Calculator\main.cpp(12,11): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  Matrix Calculator.vcxproj -> C:\Users\theoj\GD1M02-Final-Project-Kaz-and-Theo\Calculators\Matrix Calculator\x64\Debug\Matrix Calculator.exe

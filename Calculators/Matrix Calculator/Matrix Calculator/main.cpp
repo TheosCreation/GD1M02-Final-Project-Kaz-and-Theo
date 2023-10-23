@@ -9,7 +9,7 @@ int main() {
     TestMatrix.LoadFromFile("Matrix.txt", MatrixB);
 
    
-
+    int a = TestMatrix.GetDeterminant();
     TestMatrix.PrintMatrix();
 
     return 0;

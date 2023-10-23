@@ -75,3 +75,18 @@ void Matrix::LoadFromFile(const char* _Filename, LoadedValues _ValueType)
 	*this = NewMatrix;
 	file.close();
 }
+
+float Matrix::GetDeterminant()
+{
+	for (int i = 0; i < 4; i++) {
+		for (int j = i + 1; j < 4; j++) {
+			for (int k = i + 1; k < 4; k++) {
+				m_MatrixArray[j][k] = m_MatrixArray[j][k] * m_MatrixArray[i][i] - m_MatrixArray[j][i] * m_MatrixArray[i][k];
+				if (i != 0) {
+					m_MatrixArray[j][k] /= m_MatrixArray[i - 1][i - 1];
+				}
+			}
+		}
+	}
+	return m_MatrixArray[3][3];
+}

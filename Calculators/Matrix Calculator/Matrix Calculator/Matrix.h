@@ -17,8 +17,12 @@ public:
 	Matrix();
 	~Matrix();
 
+	// Matrix Functions
 	void PrintMatrix();
 	void ReplaceMatrixVal(int _RowNum, int _ColNum, int _Replacement);
 	void LoadFromFile(const char* _Filename, LoadedValues _ValueType);
+
+	// Matrix Calculations
+	float GetDeterminant();
 };
 
