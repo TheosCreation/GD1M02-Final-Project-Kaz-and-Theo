@@ -23,6 +23,6 @@ public:
 	void LoadFromFile(const char* _Filename, LoadedValues _ValueType);
 
 	// Matrix Calculations
-	float GetDeterminant();
+	
 };
 

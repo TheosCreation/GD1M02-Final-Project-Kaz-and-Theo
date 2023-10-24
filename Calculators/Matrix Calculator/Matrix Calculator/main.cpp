@@ -1,16 +1,18 @@
 #include <iostream>
-#include "Matrix.h"
-
+#include "Calculator.h"
 
 int main() {
-    Matrix TestMatrix;
- 
+    Matrix MatA;
+    Matrix MatB;
+    Calculator MainCalculator;
 
-    TestMatrix.LoadFromFile("Matrix.txt", MatrixB);
+    MatB.LoadFromFile("Matrix.txt", MatrixB);
+    MatA.LoadFromFile("Matrix.txt", MatrixA);
 
    
-    int a = TestMatrix.GetDeterminant();
-    TestMatrix.PrintMatrix();
+    int a = MainCalculator.GetDeterminant(MatA);
+    MainCalculator.GetTranspose(MatA).PrintMatrix();
+    //MatA.PrintMatrix();
 
     return 0;
 }
