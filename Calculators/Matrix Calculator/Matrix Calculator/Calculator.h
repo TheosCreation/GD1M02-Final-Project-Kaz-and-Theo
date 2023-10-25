@@ -6,10 +6,12 @@ public:
 	Calculator();
 	~Calculator();
 
-	int GetDeterminant(Matrix _MatrixA);
+	int GetDeterminant4x4(Matrix _MatrixA);
+	int GetDeterminant3x3(Matrix _MatrixA);
 	Matrix GetTranspose(Matrix _MatrixA);
 	Matrix GetInverse(Matrix _MatrixA);
-	Matrix MultiplyByScalar(Matrix _MatrixA, int _Scalar);
+	Matrix GetCofactor4x4(Matrix _MatrixA);
+	Matrix MultiplyByScalar(Matrix _MatrixA, float _Scalar);
 	Matrix MatrixAdd(Matrix _MatrixA, Matrix _MatrixB);
 	Matrix MatrixSubtract(Matrix _MatrixA, Matrix _MatrixB);
 	Matrix MatrixMultiply(Matrix _MatrixA, Matrix _MatrixB);

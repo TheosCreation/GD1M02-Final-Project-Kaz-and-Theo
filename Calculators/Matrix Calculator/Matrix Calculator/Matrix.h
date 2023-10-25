@@ -12,14 +12,14 @@ enum LoadedValues {
 class Matrix
 {
 public:
-	int m_MatrixArray[4][4];
+	float m_MatrixArray[4][4];
 	
 	Matrix();
 	~Matrix();
 
 	// Matrix Functions
 	void PrintMatrix();
-	void ReplaceMatrixVal(int _RowNum, int _ColNum, int _Replacement);
+	void ReplaceMatrixVal(int _RowNum, int _ColNum, float _Replacement);
 	void LoadFromFile(const char* _Filename, LoadedValues _ValueType);
 
 	// Matrix Calculations

@@ -25,11 +25,17 @@ void Matrix::PrintMatrix()
 			std::cout << m_MatrixArray[i][j];
 			std::cout << " ";
 		}
-		std::cout<<"]\n[";
+		if (i == 3) {
+			std::cout << "]\n";
+		}
+		else {
+			std::cout << "]\n[";
+		}
+			
 	}
 }
 
-void Matrix::ReplaceMatrixVal( int _ColNum, int _RowNum, int _Replacement)
+void Matrix::ReplaceMatrixVal( int _ColNum, int _RowNum, float _Replacement)
 {
 	m_MatrixArray[_ColNum][_RowNum] = _Replacement;
 }
