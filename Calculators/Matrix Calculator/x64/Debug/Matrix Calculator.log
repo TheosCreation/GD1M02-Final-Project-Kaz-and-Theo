@@ -1,0 +1,9 @@
+﻿  Calculator.cpp
+C:\Users\theoj\GD1M02-Final-Project-Kaz-and-Theo\Calculators\Matrix Calculator\Calculator.cpp(64,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\theoj\GD1M02-Final-Project-Kaz-and-Theo\Calculators\Matrix Calculator\Calculator.cpp(199,44): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  main.cpp
+  Matrix.cpp
+  Scalar.cpp
+  Generating Code...
+  LINK : C:\Users\theoj\GD1M02-Final-Project-Kaz-and-Theo\Calculators\x64\Debug\Matrix Calculator.exe not found or not built by the last incremental link; performing full link
+  Matrix Calculator.vcxproj -> C:\Users\theoj\GD1M02-Final-Project-Kaz-and-Theo\Calculators\x64\Debug\Matrix Calculator.exe

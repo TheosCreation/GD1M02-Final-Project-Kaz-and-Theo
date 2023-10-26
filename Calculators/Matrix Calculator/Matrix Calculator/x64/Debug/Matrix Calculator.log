@@ -1,6 +1,0 @@
-﻿  Calculator.cpp
-C:\Users\theoj\GD1M02-Final-Project-Kaz-and-Theo\Calculators\Matrix Calculator\Matrix Calculator\Calculator.cpp(64,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\theoj\GD1M02-Final-Project-Kaz-and-Theo\Calculators\Matrix Calculator\Matrix Calculator\Calculator.cpp(199,44): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  main.cpp
-  Generating Code...
-  Matrix Calculator.vcxproj -> C:\Users\theoj\GD1M02-Final-Project-Kaz-and-Theo\Calculators\Matrix Calculator\x64\Debug\Matrix Calculator.exe
