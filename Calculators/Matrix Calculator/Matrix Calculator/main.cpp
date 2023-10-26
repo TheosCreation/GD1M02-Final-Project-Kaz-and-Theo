@@ -1,14 +1,19 @@
 #include <iostream>
 #include "Calculator.h"
 
+
 int main() {
     Matrix MatA;
     Matrix MatB;
     Calculator MainCalculator;
+    Scalar Scl("Matrix.txt");
+    
 
     MatB.LoadFromFile("Matrix.txt", MatrixB);
     MatA.LoadFromFile("Matrix.txt", MatrixA);
-   
+    MainCalculator.GenerateIdentity(4).PrintMatrix();
+
+    //MainCalculator.GetInverse(MatA).PrintMatrix();
     //int a = MainCalculator.GetDeterminant4x4(MatA);
     //std::cout << a;
     //MainCalculator.GetCofactor4x4(MatA).PrintMatrix();

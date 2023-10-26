@@ -1,5 +1,6 @@
 #pragma once
 #include "Matrix.h"
+#include "Scalar.h"
 class Calculator
 {
 public:
@@ -15,7 +16,7 @@ public:
 	Matrix MatrixAdd(Matrix _MatrixA, Matrix _MatrixB);
 	Matrix MatrixSubtract(Matrix _MatrixA, Matrix _MatrixB);
 	Matrix MatrixMultiply(Matrix _MatrixA, Matrix _MatrixB);
-	Matrix MatrixMultiplyReverse(Matrix _MatrixB, Matrix _MatrixA);
-	Matrix GenerateIdentity();
+	Matrix MatrixMultiplyReverse(Matrix _MatrixA, Matrix _MatrixB);
+	Matrix GenerateIdentity(int _length);
 };
 

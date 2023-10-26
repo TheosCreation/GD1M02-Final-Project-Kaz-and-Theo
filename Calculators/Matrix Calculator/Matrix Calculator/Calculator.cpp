@@ -58,12 +58,12 @@ Matrix Calculator::GetInverse(Matrix _MatrixA)
 	// Check if the determinant is zero (matrix is singular)
 	if (determinant == 0) {
 		// Handle the case when the matrix is not invertible
-		return GenerateIdentity();
+		return GenerateIdentity(4);
 	}
 
 	float inverseFactor = (1.0 / determinant);
 
-	return MultiplyByScalar(GetCofactor4x4(_MatrixA), inverseFactor);
+	return GetTranspose(MultiplyByScalar(GetCofactor4x4(_MatrixA), inverseFactor));
 }
 
 Matrix Calculator::GetCofactor4x4(Matrix _MatrixA)
@@ -141,22 +141,64 @@ Matrix Calculator::MatrixSubtract(Matrix _MatrixA, Matrix _MatrixB)
 Matrix Calculator::MatrixMultiply(Matrix _MatrixA, Matrix _MatrixB)
 {
 	Matrix ReturnedMatrix;
-	for (int i = 0; i < 4; i++)
-	{
-		for (int j = 0; j < 4; j++)
+	int rowB = sizeof(_MatrixB.m_MatrixArray) / sizeof(_MatrixB.m_MatrixArray[0]);
+	int columnA = sizeof(_MatrixA.m_MatrixArray[0])/sizeof(float);
+	//checks if youre allowed to multiply them
+	if(rowB==columnA){
+		
+		for (int i = 0; i < 4; ++i)
 		{
-			ReturnedMatrix.ReplaceMatrixVal(i, j, (_MatrixA.m_MatrixArray[i][j] * _MatrixB.m_MatrixArray[i][j]) + (_MatrixA.m_MatrixArray[i+1][j] * _MatrixB.m_MatrixArray[i][j+1]) + (_MatrixA.m_MatrixArray[i+2][j] * _MatrixB.m_MatrixArray[i][j+2]) + (_MatrixA.m_MatrixArray[i+3][j] * _MatrixB.m_MatrixArray[i][j+3]));
+			for (int j = 0; j < 4; ++j)
+			{
+				for (int k = 0; k < 4; ++k)
+				{
+					ReturnedMatrix.m_MatrixArray[i][j] += _MatrixA.m_MatrixArray[i][k] * _MatrixB.m_MatrixArray[k][j];
+				}
+			}
 		}
+		return ReturnedMatrix;
+	}
+	else {
+		return Matrix();
+	}
+	
+}
+
+Matrix Calculator::MatrixMultiplyReverse(Matrix _MatrixA, Matrix _MatrixB)
+{
+	Matrix ReturnedMatrix;
+	int rowB = sizeof(_MatrixA.m_MatrixArray) / sizeof(_MatrixB.m_MatrixArray[0]);
+	int columnA = sizeof(_MatrixA.m_MatrixArray[0]) / sizeof(float);
+	//checks if youre allowed to multiply them
+	if (rowB == columnA) {
+
+		for (int i = 0; i < 4; ++i)
+		{
+			for (int j = 0; j < 4; ++j)
+			{
+				for (int k = 0; k < 4; ++k)
+				{
+					ReturnedMatrix.m_MatrixArray[i][j] += _MatrixB.m_MatrixArray[i][k] * _MatrixA.m_MatrixArray[k][j];
+				}
+			}
+		}
+		return ReturnedMatrix;
+	}
+	else {
+		return Matrix();
+	}
+
+}
+
+Matrix Calculator::GenerateIdentity(int _length)
+{
+	Matrix ReturnedMatrix;
+
+	for (int i = 0; i < _length; i++) {
+		for (int j = 0; j < _length; j++) {
+			ReturnedMatrix.m_MatrixArray[i][j] = (j == i) ? 1 : 0;
+		}
+	
 	}
 	return ReturnedMatrix;
-}
-
-Matrix Calculator::MatrixMultiplyReverse(Matrix _MatrixB, Matrix _MatrixA)
-{
-	return Matrix();
-}
-
-Matrix Calculator::GenerateIdentity()
-{
-	return Matrix();
 }

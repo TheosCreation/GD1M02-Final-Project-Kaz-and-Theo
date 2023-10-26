@@ -6,7 +6,7 @@
 
 enum LoadedValues {
 	MatrixA,
-	MatrixB,
+	MatrixB
 };
 
 class Matrix
