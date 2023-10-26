@@ -47,6 +47,8 @@ int main() {
 
     std::cout << "\n" << "Generated Identity Matrix" << "\n";
     MainCalculator.GenerateIdentity(4).PrintMatrix();
+    int a;
+    std::cin >> a;
 
     return 0;
 }
