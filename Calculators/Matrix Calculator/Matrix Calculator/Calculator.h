@@ -7,8 +7,9 @@ public:
 	Calculator();
 	~Calculator();
 
-	int GetDeterminant4x4(Matrix _MatrixA);
-	int GetDeterminant3x3(Matrix _MatrixA);
+	//gets the determinant
+	float GetDeterminant4x4(Matrix _MatrixA);
+	float GetDeterminant3x3(Matrix _MatrixA);
 	Matrix GetTranspose(Matrix _MatrixA);
 	Matrix GetInverse(Matrix _MatrixA);
 	Matrix GetCofactor4x4(Matrix _MatrixA);

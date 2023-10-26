@@ -8,9 +8,9 @@ Calculator::~Calculator()
 {
 }
 
-int Calculator::GetDeterminant4x4(Matrix _MatrixA)
+float Calculator::GetDeterminant4x4(Matrix _MatrixA)
 {
-	int Determinant = 0;
+	float Determinant = 0;
 	int sign = 1;
 	Matrix TempMatrix;
 
@@ -21,7 +21,7 @@ int Calculator::GetDeterminant4x4(Matrix _MatrixA)
 			}
 		}
 
-		int subDet = GetDeterminant3x3(TempMatrix);
+		float subDet = GetDeterminant3x3(TempMatrix);
 
 		Determinant += sign * _MatrixA.m_MatrixArray[0][i] * subDet;
 		sign = -sign;
@@ -29,7 +29,7 @@ int Calculator::GetDeterminant4x4(Matrix _MatrixA)
 
 	return Determinant;
 }
-int Calculator::GetDeterminant3x3(Matrix _MatrixA)
+float Calculator::GetDeterminant3x3(Matrix _MatrixA)
 {
 	return _MatrixA.m_MatrixArray[0][0] * (_MatrixA.m_MatrixArray[1][1] * _MatrixA.m_MatrixArray[2][2] - _MatrixA.m_MatrixArray[1][2] * _MatrixA.m_MatrixArray[2][1]) -
 		_MatrixA.m_MatrixArray[0][1] * (_MatrixA.m_MatrixArray[1][0] * _MatrixA.m_MatrixArray[2][2] - _MatrixA.m_MatrixArray[1][2] * _MatrixA.m_MatrixArray[2][0]) +
