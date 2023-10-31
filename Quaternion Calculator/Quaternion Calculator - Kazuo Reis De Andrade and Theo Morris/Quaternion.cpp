@@ -49,7 +49,11 @@ void Quaternion::LoadFromFile(const char* _Filename, LoadedValues _ValueType) {
     char k = 0; 
     std::getline(file, line, '\n');
     char prev = 'z';
-
+    if (_ValueType == QuaternionB) {
+        std::getline(file, line, '\n');
+        std::getline(file, line, '\n');
+        //skips 2 lines
+    }
         for (int a = 0; a < line.size(); a++)
         {
            
@@ -82,9 +86,9 @@ void Quaternion::LoadFromFile(const char* _Filename, LoadedValues _ValueType) {
     Quaternion q(real - '0', i - '0', j - '0', k - '0');
     *this = q;
    
-    m_QuaternionArray[0] = real - '0';
-    m_QuaternionArray[1] = i - '0';
-    m_QuaternionArray[2] = j - '0';
-    m_QuaternionArray[3] = k - '0';
+    m_QuaternionArray[0] = (real== 1)? real : real - '0';
+    m_QuaternionArray[1] = (i == 1) ? i : i - '0';;
+    m_QuaternionArray[2] = (j == 1) ? j : j - '0';
+    m_QuaternionArray[3] = (k == 1) ? k : k - '0';
     file.close();
 }

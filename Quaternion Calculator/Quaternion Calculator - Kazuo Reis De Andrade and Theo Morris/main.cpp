@@ -3,11 +3,29 @@
 
 int main() {
 	Calculator MainCalculator;
+	//q1 init
 	Quaternion q1(0,0,0,0);
 	q1.LoadFromFile("Quaternion.txt", QuaternionA);
-	Quaternion q2(4, 3, 2, 1);
-	int Scalar = 2;
-	//Quaternion q2(0,0,0,0);
+	//end 
+	// 
+	//q2 init
+	Quaternion q2(0, 0, 0, 0);
+	q2.LoadFromFile("Quaternion.txt", QuaternionB);
+	//end
+	
+	//scalar file loading
+	int Scalar = 0;
+	std::ifstream file("Quaternion.txt");
+	std::string line;
+	for (int i = 0; i < 5; i++)
+	{
+		std::getline(file, line, '\n');
+	}
+	Scalar = line[0] - '0';
+	//end 
+
+
+	
 	std::cout << "q1: ";
 	q1.PrintQuaternion();
 	std::cout << "\nq2: ";
@@ -37,4 +55,5 @@ int main() {
 	MainCalculator.ScalarMultiplication(q1, Scalar).PrintQuaternion();
 	std::cout << "Scalar Multiplication q2" << "\n";
 	MainCalculator.ScalarMultiplication(q2, Scalar).PrintQuaternion();
+	
 }
