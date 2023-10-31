@@ -18,36 +18,29 @@ void Quaternion::LoadFromFile(const char* _Filename, LoadedValues _ValueType) {
     }
 
     std::string line;
-    while (std::getline(file, line)) {
-        std::istringstream iss(line);
-        double real, i, j, k;
-        char plus_minus; // To read the '+' or '-' symbols
-
-        if (_ValueType == QuaternionA) {
-            iss >> real >> plus_minus >> i >> plus_minus >> j >> plus_minus >> k;
-        }
-        else if (_ValueType == QuaternionB) {
-            iss >> real;
-            i = 0.0;
-            j = 0.0;
-            k = 0.0;
-        }
-        else {
-            std::cerr << "Error: Invalid value type specified." << std::endl;
-            return;
-        }
-
-        if (iss) {
-            // Successfully read the values from the line
-            // Now, create a Quaternion using these values
-            Quaternion q(real, i, j, k);
-            *this = q;
-            // Do something with the loaded Quaternion, e.g., store it in a container
-        }
-        else {
-            std::cerr << "Error: Invalid line format in the file." << std::endl;
+    double real, i, j, k;
+    while (file >> line) {
+        for (int a = 0; a < line.size(); a++)
+        {
+            switch (line[a])
+            {
+            case 'i':
+                i = line[a - 1];
+                real = line[a - 3];
+                break;
+            case 'j':
+                j = line[a - 1];
+                break;
+            case 'k':
+                k = line[a - 1];
+                break;
+            default:
+                break;
+            }
         }
     }
+    Quaternion q(real, i, j, k);
+    *this = q;
 
     file.close();
 }
