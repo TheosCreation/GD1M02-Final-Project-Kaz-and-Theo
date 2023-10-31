@@ -3,7 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
-
+#include <string>
 #include <vector>
 
 enum LoadedValues {
@@ -14,7 +14,7 @@ enum LoadedValues {
 class Quaternion
 {
 public:
-	Quaternion(double a, double b, double c, double d){};
+	Quaternion(int a, int b, int c, int d);
 	~Quaternion();
 
     
