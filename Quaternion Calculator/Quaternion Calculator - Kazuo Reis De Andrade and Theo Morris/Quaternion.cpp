@@ -60,10 +60,10 @@ void Quaternion::LoadFromFile(const char* _Filename, LoadedValues _ValueType) {
     Quaternion q(real - '0', i - '0', j - '0', k - '0');
     *this = q;
    
-    m_QuaternionArray[0] = real;
-    m_QuaternionArray[1] = i;
-    m_QuaternionArray[2] = j;
-    m_QuaternionArray[3] = k;
+    m_QuaternionArray[0] = real - '0';
+    m_QuaternionArray[1] = i - '0';
+    m_QuaternionArray[2] = j - '0';
+    m_QuaternionArray[3] = k - '0';
 
     
     std::cout << real << std::endl;
