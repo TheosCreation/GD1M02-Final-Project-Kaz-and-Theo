@@ -1,2 +1,10 @@
 ﻿  Quaternion.cpp
+C:\Users\theoj\GD1M02-Final-Project-Kaz-and-Theo\Quaternion Calculator\Quaternion Calculator - Kazuo Reis De Andrade and Theo Morris\Quaternion.cpp(8,28): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\theoj\GD1M02-Final-Project-Kaz-and-Theo\Quaternion Calculator\Quaternion Calculator - Kazuo Reis De Andrade and Theo Morris\Quaternion.cpp(9,28): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\theoj\GD1M02-Final-Project-Kaz-and-Theo\Quaternion Calculator\Quaternion Calculator - Kazuo Reis De Andrade and Theo Morris\Quaternion.cpp(10,28): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\theoj\GD1M02-Final-Project-Kaz-and-Theo\Quaternion Calculator\Quaternion Calculator - Kazuo Reis De Andrade and Theo Morris\Quaternion.cpp(11,28): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\theoj\GD1M02-Final-Project-Kaz-and-Theo\Quaternion Calculator\Quaternion Calculator - Kazuo Reis De Andrade and Theo Morris\Quaternion.cpp(85,33): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\theoj\GD1M02-Final-Project-Kaz-and-Theo\Quaternion Calculator\Quaternion Calculator - Kazuo Reis De Andrade and Theo Morris\Quaternion.cpp(86,30): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\theoj\GD1M02-Final-Project-Kaz-and-Theo\Quaternion Calculator\Quaternion Calculator - Kazuo Reis De Andrade and Theo Morris\Quaternion.cpp(87,30): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\theoj\GD1M02-Final-Project-Kaz-and-Theo\Quaternion Calculator\Quaternion Calculator - Kazuo Reis De Andrade and Theo Morris\Quaternion.cpp(88,30): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   Quaternion Calculator - Kazuo Reis De Andrade and Theo Morris.vcxproj -> C:\Users\theoj\GD1M02-Final-Project-Kaz-and-Theo\Quaternion Calculator\x64\Debug\Quaternion Calculator - Kazuo Reis De Andrade and Theo Morris.exe

@@ -5,11 +5,33 @@ Quaternion::~Quaternion()
 }
 Quaternion::Quaternion(int a, int b, int c, int d)
 {
+    m_QuaternionArray[0] = a;
+    m_QuaternionArray[1] = b;
+    m_QuaternionArray[2] = c;
+    m_QuaternionArray[3] = d;
 }
 
 void Quaternion::PrintQuaternion()
 {
-    std::cout << "[" << m_QuaternionArray[0] << ", " << m_QuaternionArray[1] << "i, " << m_QuaternionArray[2] << "j, " << m_QuaternionArray[3] << "k]" << std::endl;
+
+    std::cout << m_QuaternionArray[0];
+
+    if (m_QuaternionArray[1] >= 0)
+        std::cout << " + " << m_QuaternionArray[1] << "i";
+    else
+        std::cout << " - " << -m_QuaternionArray[1] << "i";
+
+    if (m_QuaternionArray[2] >= 0)
+        std::cout << " + " << m_QuaternionArray[2] << "j";
+    else
+        std::cout << " - " << -m_QuaternionArray[2] << "j";
+
+    if (m_QuaternionArray[3] >= 0)
+        std::cout << " + " << m_QuaternionArray[3] << "k";
+    else
+        std::cout << " - " << -m_QuaternionArray[3] << "k";
+
+    std::cout << std::endl;
 }
 
 void Quaternion::LoadFromFile(const char* _Filename, LoadedValues _ValueType) {
@@ -64,11 +86,5 @@ void Quaternion::LoadFromFile(const char* _Filename, LoadedValues _ValueType) {
     m_QuaternionArray[1] = i - '0';
     m_QuaternionArray[2] = j - '0';
     m_QuaternionArray[3] = k - '0';
-
-    
-    std::cout << real << std::endl;
-    std::cout << i << std::endl;
-    std::cout << j << std::endl;
-    std::cout << k << std::endl;
     file.close();
 }

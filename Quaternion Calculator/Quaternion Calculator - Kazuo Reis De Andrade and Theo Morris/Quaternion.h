@@ -18,7 +18,7 @@ public:
 	~Quaternion();
 
     
-	int m_QuaternionArray[4];
+	float m_QuaternionArray[4];
 
 	void PrintQuaternion();
 	void LoadFromFile(const char* _Filename, LoadedValues _ValueType);
