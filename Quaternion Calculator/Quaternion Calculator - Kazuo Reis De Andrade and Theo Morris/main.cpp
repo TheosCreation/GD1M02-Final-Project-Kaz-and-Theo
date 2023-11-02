@@ -5,7 +5,9 @@ int main() {
 	Calculator MainCalculator;
 	Quaternion q1(0,0,0,0);
 	q1.LoadFromFile("Quaternion.txt", QuaternionA);
-	Quaternion q2(4, 3, 2, 1);
+	Quaternion q2(0, 0, 0, 0);
+	q2.LoadFromFile("Quaternion.txt", QuaternionB);
+	std::ifstream file("Quaternion.txt");
 	int Scalar = 2;
 	//Quaternion q2(0,0,0,0);
 	std::cout << "q1: ";
