@@ -26,6 +26,7 @@ int main() {
 
 
 	
+	//prints everything
 	std::cout << "q1: ";
 	q1.PrintQuaternion();
 	std::cout << "\nq2: ";
