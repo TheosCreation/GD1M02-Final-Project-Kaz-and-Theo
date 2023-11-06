@@ -1,4 +1,6 @@
 #include "Quaternion.h"
+#include "Slerp.h"
+
 int main() {
 	Quaternion q1(0, 0, 0, 0);
 	q1.LoadFromFile("Slerp.txt", QuaternionA);
@@ -8,7 +10,7 @@ int main() {
 	Quaternion q2(0, 0, 0, 0);
 	q2.LoadFromFile("Slerp.txt", QuaternionB);
 	
-	float Scalar = 0.0f;
+	float t = 0.0f;
 	std::ifstream file("Slerp.txt");
 	std::string line;
 
@@ -16,7 +18,7 @@ int main() {
 	while (std::getline(file, line)) {
 		// Loop through the file until you reach the last line
 	}
-	Scalar = std::stof(line);
+	t = std::stof(line);
 	
 
 	//prints everything
@@ -25,5 +27,5 @@ int main() {
 	std::cout << "\nq2: ";
 	q2.PrintQuaternion();
 
-	std::cout << "Scalar:" << Scalar << "\n\n";
+	std::cout << "t:" << t << "\n\n";
 }

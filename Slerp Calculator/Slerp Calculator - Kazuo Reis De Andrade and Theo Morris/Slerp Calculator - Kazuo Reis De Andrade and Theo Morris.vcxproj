@@ -129,9 +129,11 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Quaternion.cpp" />
+    <ClCompile Include="Slerp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Quaternion.h" />
+    <ClInclude Include="Slerp.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
