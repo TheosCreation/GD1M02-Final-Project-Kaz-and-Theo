@@ -127,11 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Calculator.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Quaternion.cpp" />
     <ClCompile Include="Slerp.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Calculator.h" />
     <ClInclude Include="Quaternion.h" />
     <ClInclude Include="Slerp.h" />
   </ItemGroup>

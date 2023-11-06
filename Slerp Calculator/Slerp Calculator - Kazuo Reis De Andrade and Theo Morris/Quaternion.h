@@ -13,7 +13,7 @@ enum LoadedValues {
 class Quaternion
 {
 public:
-	Quaternion(float a, float b, float c, float d);
+	Quaternion(float a = 0, float b = 0, float c = 0, float d = 0);
 	~Quaternion();
 
 

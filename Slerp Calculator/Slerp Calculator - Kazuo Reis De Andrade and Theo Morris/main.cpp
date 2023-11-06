@@ -1,4 +1,4 @@
-#include "Quaternion.h"
+
 #include "Slerp.h"
 
 int main() {
@@ -28,4 +28,7 @@ int main() {
 	q2.PrintQuaternion();
 
 	std::cout << "t:" << t << "\n\n";
+
+
+	Slerp sluuurp(q1,q2,t);
 }
