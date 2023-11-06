@@ -139,3 +139,17 @@ Quaternion Calculator::ScalarMultiplication(Quaternion _Quaternion, int _Scalar)
 	ReturnQuaternion.m_QuaternionArray[3] = _Quaternion.m_QuaternionArray[3] * _Scalar;
 	return ReturnQuaternion;
 }
+
+Quaternion Calculator::Normalised(Quaternion _Quaternion)
+{
+	Quaternion ReturnQuaternion(0, 0, 0, 0);
+	float d = sqrt( (_Quaternion.m_QuaternionArray[0]) * (_Quaternion.m_QuaternionArray[0]) + 
+					(_Quaternion.m_QuaternionArray[1]) * (_Quaternion.m_QuaternionArray[1]) + 
+					(_Quaternion.m_QuaternionArray[2]) * (_Quaternion.m_QuaternionArray[2]) + 
+					(_Quaternion.m_QuaternionArray[3]) * (_Quaternion.m_QuaternionArray[3]));
+	ReturnQuaternion.m_QuaternionArray[0] = _Quaternion.m_QuaternionArray[0] / d;
+	ReturnQuaternion.m_QuaternionArray[1] = _Quaternion.m_QuaternionArray[1] / d;
+	ReturnQuaternion.m_QuaternionArray[2] = _Quaternion.m_QuaternionArray[2] / d;
+	ReturnQuaternion.m_QuaternionArray[3] = _Quaternion.m_QuaternionArray[3] / d;
+	return ReturnQuaternion;
+}

@@ -4,8 +4,11 @@
 class Calculator
 {
 public:
+	// Adds like terms of the quaternions
 	Quaternion Inverse(Quaternion _Quaternion);
-	Quaternion Multiplication(Quaternion _QuaternionA, Quaternion _QuaternionB);
-	void ToAxisAngle(Quaternion _Quaternion, float _Angle);
+	Quaternion Normalised(Quaternion _Quaternion);
+	Quaternion ScalarMultiplication(Quaternion _Quaternion, int _Scalar);
+	float ToAxisAngle(Quaternion _Quaternion);
+	Quaternion Slerp(Quaternion _a, Quaternion _b, float _t);
 };
 

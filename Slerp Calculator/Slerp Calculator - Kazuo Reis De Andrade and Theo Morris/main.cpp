@@ -13,7 +13,7 @@ int main() {
 	float t = 0.0f;
 	std::ifstream file("Slerp.txt");
 	std::string line;
-
+	Calculator MainCalculator;
 	// Read the last line in the file and sets a float as the last line
 	while (std::getline(file, line)) {
 		// Loop through the file until you reach the last line
@@ -26,9 +26,7 @@ int main() {
 	q1.PrintQuaternion();
 	std::cout << "\nq2: ";
 	q2.PrintQuaternion();
-
-	std::cout << "t:" << t << "\n\n";
-
-
-	Slerp sluuurp(q1,q2,t);
+	std::cout << "t: " << t << "\n\n";
+	std::cout << "Slerp of q1 and q2 and t: ";
+	MainCalculator.Slerp(q1, q2, t).PrintQuaternion();
 }

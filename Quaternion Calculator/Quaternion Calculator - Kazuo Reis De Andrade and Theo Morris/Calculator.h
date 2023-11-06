@@ -1,5 +1,6 @@
 #pragma once
 #include "Quaternion.h"
+#include <math.h>
 class Calculator
 {
 public:
@@ -24,4 +25,6 @@ public:
 	Quaternion Inverse(Quaternion _Quaternion);
 	// Multiplys each part by the scalar
 	Quaternion ScalarMultiplication(Quaternion _Quaternion, int _Scalar);
+
+	Quaternion Normalised(Quaternion _Quaternion);
 };

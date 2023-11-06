@@ -56,5 +56,6 @@ int main() {
 	MainCalculator.ScalarMultiplication(q1, Scalar).PrintQuaternion();
 	std::cout << "Scalar Multiplication q2" << "\n";
 	MainCalculator.ScalarMultiplication(q2, Scalar).PrintQuaternion();
-	
+	std::cout << "Normalised q1" << "\n";
+	MainCalculator.Normalised(q1).PrintQuaternion();
 }

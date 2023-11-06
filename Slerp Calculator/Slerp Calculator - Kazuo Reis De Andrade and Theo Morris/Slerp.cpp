@@ -6,8 +6,7 @@ Slerp::Slerp(Quaternion _a, Quaternion _b, float _t)
 	a = _a;
 	b = _b;
 	t = _t;
-
-	d = calc.Multiplication(b, calc.Inverse(a));
+	//d = calc.Multiplication(b, calc.Inverse(a));
 	// now convert d to axis angle
 	// and power by t (d^t)
 	// then multiply the answer by a
@@ -15,6 +14,9 @@ Slerp::Slerp(Quaternion _a, Quaternion _b, float _t)
 	d.PrintQuaternion();
 	a.PrintQuaternion();
 	b.PrintQuaternion();
+
+	
+	
 }
 
 Slerp::~Slerp()

@@ -63,7 +63,6 @@ void Quaternion::LoadFromFile(const char* _Filename, LoadedValues _ValueType) {
         while (iss >> plus_minus >> value) {
             char component;
             iss >> component;
-            std::cout << component;
 
             if (component == 'i') {
                 i = value;
