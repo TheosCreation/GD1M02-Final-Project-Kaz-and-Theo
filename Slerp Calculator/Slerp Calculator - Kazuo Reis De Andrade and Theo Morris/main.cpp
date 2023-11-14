@@ -29,4 +29,6 @@ int main() {
 	std::cout << "t: " << t << "\n\n";
 	std::cout << "Slerp of q1 and q2 and t: ";
 	MainCalculator.Slerp(q1, q2, t).PrintQuaternion();
+	int Pause;
+	std::cin >> Pause;
 }

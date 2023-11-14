@@ -39,6 +39,7 @@ int main() {
     else {
         std::cout << "Matrix is NOT in Reduced Row Echelon form." << std::endl;
     }
-
+    int Pause;
+    std::cin >> Pause;
     return 0;
 }

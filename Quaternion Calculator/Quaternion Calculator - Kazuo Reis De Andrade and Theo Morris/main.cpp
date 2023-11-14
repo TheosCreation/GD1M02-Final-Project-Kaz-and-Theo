@@ -58,4 +58,6 @@ int main() {
 	MainCalculator.ScalarMultiplication(q2, Scalar).PrintQuaternion();
 	std::cout << "Normalised q1" << "\n";
 	MainCalculator.Normalised(q1).PrintQuaternion();
+	int Pause;
+	std::cin >> Pause;
 }
