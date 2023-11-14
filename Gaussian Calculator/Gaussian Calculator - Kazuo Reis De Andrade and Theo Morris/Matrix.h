@@ -6,23 +6,26 @@
 #include <string>
 #include <vector>
 
-class Matrix
-{
+class Matrix {
+private:
+    static const int numRows = 3;
+    static const int numCols = 4;
+
+    std::vector<std::vector<double>> m_MatrixArray;
+
 public:
-	Matrix();
-	~Matrix();
-	std::vector<std::vector<double>> m_MatrixArray;
-	void PrintMatrix();
-	void LoadFromFile(const char* _Filename);
-	void multiplyRow(std::vector<std::vector<double>>&matrix, int row, double scalar);
+    Matrix();
+    ~Matrix();
 
-	void addMultipleOfRow(std::vector<std::vector<double>>& matrix, int targetRow, int sourceRow, double multiple);
+    const std::vector<std::vector<double>>& getMatrix() const;
+    void PrintMatrix() const;
+    void loadFromFile(const char* _Filename);
 
-	void gaussianElimination(std::vector<std::vector<double>>& matrix);
+    void multiplyRow(int row, double scalar);
+    void addMultipleOfRow(int targetRow, int sourceRow, double multiple);
+    void gaussianEliminationReducedEchelon();
+    void gaussianEliminationEchelon();
 
-	bool isRowEchelonForm(const std::vector<std::vector<double>>& matrix);
-
-	bool isReducedRowEchelonForm(const std::vector<std::vector<double>>& matrix);
-
+    bool isRowEchelonForm() const;
+    bool isReducedRowEchelonForm() const;
 };
-

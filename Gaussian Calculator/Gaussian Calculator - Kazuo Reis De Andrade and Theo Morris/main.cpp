@@ -1,12 +1,4 @@
 #include "Matrix.h"
-/*
-int main() {
-	Matrix matrixA;
-	matrixA.LoadFromFile("Gaussian.txt");
-	matrixA.PrintMatrix();
-
-
-}*/
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -15,20 +7,20 @@ int main() {
 
 int main() {
     Matrix matrixA;
-    matrixA.LoadFromFile("Gaussian.txt");
+    matrixA.loadFromFile("Gaussian.txt");
 
     std::cout << "Original Matrix:" << std::endl;
     matrixA.PrintMatrix();
 
     // Perform Gaussian Elimination
-    matrixA.gaussianElimination(matrixA.m_MatrixArray);
+    matrixA.gaussianEliminationEchelon();
 
     // Display the matrix after Gaussian Elimination
     std::cout << "Matrix after Gaussian Elimination:" << std::endl;
     matrixA.PrintMatrix();
 
     // Check and display Row Echelon form
-    if (matrixA.isRowEchelonForm(matrixA.m_MatrixArray)) {
+    if (matrixA.isRowEchelonForm()) {
         std::cout << "Matrix is in Row Echelon form." << std::endl;
     }
     else {
@@ -36,7 +28,7 @@ int main() {
     }
 
     // Check and display Reduced Row Echelon form
-    if (matrixA.isReducedRowEchelonForm(matrixA.m_MatrixArray)) {
+    if (matrixA.isReducedRowEchelonForm()) {
         std::cout << "Matrix is in Reduced Row Echelon form." << std::endl;
     }
     else {
