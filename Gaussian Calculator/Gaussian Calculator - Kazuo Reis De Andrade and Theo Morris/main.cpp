@@ -3,18 +3,22 @@
 #include <fstream>
 #include <vector>
 
-
-
 int main() {
     Matrix matrixA;
     matrixA.loadFromFile("Gaussian.txt");
 
     std::cout << "Original Matrix:" << std::endl;
     matrixA.PrintMatrix();
-
+    bool Reduced;
+    std::cout << "0 - for Row Echelon form, 1 - Reduced Row Echelon Form: ";
+    std::cin >> Reduced;
     // Perform Gaussian Elimination
-    matrixA.gaussianEliminationReducedEchelon();
-  //  matrixA.toRowEchelonForm();
+    if (Reduced) {
+        matrixA.gaussianEliminationReducedEchelon();
+    }
+    else {
+        matrixA.gaussianEliminationEchelon();
+    }
 
     // Display the matrix after Gaussian Elimination
     std::cout << "Matrix after Gaussian Elimination:" << std::endl;
