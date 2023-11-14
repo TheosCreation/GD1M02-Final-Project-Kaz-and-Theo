@@ -14,11 +14,12 @@ const std::vector<std::vector<double>>& Matrix::getMatrix() const
 }
 
 void Matrix::PrintMatrix() const {
+    std::cout << std::fixed << std::setprecision(2);
     for (int i = 0; i < numRows; ++i) {
         for (int j = 0; j < numCols; ++j) {
-            std::cout << m_MatrixArray[i][j] << " ";
+            std::cout <<(m_MatrixArray[i][j]) << " ";
         }
-        std::cout << std::endl;
+        std::cout << std::endl; 
     }
 }
 
