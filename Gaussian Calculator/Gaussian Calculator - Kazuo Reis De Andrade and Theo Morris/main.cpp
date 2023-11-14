@@ -13,7 +13,8 @@ int main() {
     matrixA.PrintMatrix();
 
     // Perform Gaussian Elimination
-    matrixA.gaussianEliminationEchelon();
+    matrixA.gaussianEliminationReducedEchelon();
+  //  matrixA.toRowEchelonForm();
 
     // Display the matrix after Gaussian Elimination
     std::cout << "Matrix after Gaussian Elimination:" << std::endl;

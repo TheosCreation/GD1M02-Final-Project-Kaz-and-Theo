@@ -65,10 +65,14 @@ void Matrix::addMultipleOfRow(int targetRow, int sourceRow, double multiple) {
 }
 
 // Function to perform Gaussian Elimination
-void Matrix::gaussianEliminationReducedEchelon() {
+void Matrix::gaussianEliminationEchelon() {
     int numRows = m_MatrixArray.size();
     int numCols = m_MatrixArray[0].size();
 
+
+
+  
+    
     for (int pivotRow = 0; pivotRow < numRows; ++pivotRow) {
         // Find the pivot column (the leftmost non-zero column in the current row)
         int pivotCol = 0;
@@ -80,7 +84,30 @@ void Matrix::gaussianEliminationReducedEchelon() {
             // All elements in this row are zero, move to the next row
             continue;
         }
-
+        int count = 0;
+        while (count < 2&& m_MatrixArray[pivotRow][pivotCol] ==0){
+            
+            int NextRow = ++count;
+            if(m_MatrixArray[NextRow][pivotCol] != 0){
+                std::vector<double> temp = m_MatrixArray[0];
+                m_MatrixArray[0] = m_MatrixArray[NextRow];
+                m_MatrixArray[NextRow] = temp;
+                 break;
+            }
+            //checks if the top elemet in the first row is 0, if so then go down                  
+        }
+        
+        if (m_MatrixArray[pivotRow][pivotCol] != 1) {
+            double pivotElement = m_MatrixArray[pivotRow][pivotCol];
+            multiplyRow(pivotRow, (1.0f / pivotElement));
+        }
+        for (int i = pivotRow; i < numRows; i++) {
+            if (i != pivotRow && m_MatrixArray[i][pivotCol] != 0) {
+                double multiple = -m_MatrixArray[i][pivotCol];
+                addMultipleOfRow(i, pivotRow, multiple);
+            }
+        }
+        /*
         // Make the pivot element 1 by multiplying the row by 1/pivotElement
         double pivotElement = m_MatrixArray[pivotRow][pivotCol];
         multiplyRow(pivotRow, 1.0 / pivotElement);
@@ -91,12 +118,12 @@ void Matrix::gaussianEliminationReducedEchelon() {
                 double multiple = -m_MatrixArray[i][pivotCol];
                 addMultipleOfRow(i, pivotRow, multiple);
             }
-        }
+        }*/
     }
 }
 
 // Function to perform Gaussian Elimination
-void Matrix::gaussianEliminationEchelon() {
+void Matrix::gaussianEliminationReducedEchelon() {
     int numRows = m_MatrixArray.size();
     int numCols = m_MatrixArray[0].size();
     for (int pivotRow = 0; pivotRow < numRows; ++pivotRow) {
@@ -104,9 +131,12 @@ void Matrix::gaussianEliminationEchelon() {
         int pivotCol = 0;
         while (pivotCol < numCols && m_MatrixArray[pivotRow][pivotCol] == 0) {
             ++pivotCol;
+            
         }
+       
 
         if (pivotCol == numCols) {
+           
             // All elements in this row are zero, move to the next row
             continue;
         }
@@ -115,13 +145,13 @@ void Matrix::gaussianEliminationEchelon() {
         double pivotElement = m_MatrixArray[pivotRow][pivotCol];
         multiplyRow(pivotRow, (1.0f / pivotElement));
 
-        //// Eliminate non-zero entries above and below the pivot
-        //for (int i = 0; i < numRows; ++i) {
-        //    if (i != pivotRow && m_MatrixArray[i][pivotCol] != 0) {
-        //        double multiple = -m_MatrixArray[i][pivotCol];
-        //        addMultipleOfRow(i, pivotRow, multiple);
-        //    }
-        //}
+        // Eliminate non-zero entries above and below the pivot
+        for (int i = 0; i < numRows; ++i) {
+            if (i != pivotRow && m_MatrixArray[i][pivotCol] != 0) {
+                double multiple = -m_MatrixArray[i][pivotCol];
+                addMultipleOfRow(i, pivotRow, multiple);
+            }
+        }
     }
 }
 

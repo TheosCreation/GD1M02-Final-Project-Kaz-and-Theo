@@ -28,4 +28,5 @@ public:
 
     bool isRowEchelonForm() const;
     bool isReducedRowEchelonForm() const;
+    void toRowEchelonForm();
 };
