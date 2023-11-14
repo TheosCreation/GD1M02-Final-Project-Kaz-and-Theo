@@ -52,8 +52,8 @@ void Matrix::loadFromFile(const char* _Filename) {
 
 // Function to perform elementary row operation: Multiply a row by a scalar
 void Matrix::multiplyRow(int row, double scalar) {
-    for (double& element : m_MatrixArray[row]) {
-        element *= scalar;
+    for (int i = 0; i < m_MatrixArray[row].size(); i++) {
+        m_MatrixArray[row][i] *= scalar;
     }
 }
 
